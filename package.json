@@ -4,14 +4,21 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "index.js",
+    "server": "nodemon index.js",
+    "client": "cd Frontend && npm run start",
+    "server-install": "npm install",
+    "client-install": "cd Frontend && npm install",
+    "install-all": "concurrently \"npm run server-install\" \"npm run client-instal1\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd Frontend && npm install && npm run build"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.1",
     "cloudinary": "^1.28.1",
+    "concurrently": "^7.1.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
