@@ -45,6 +45,7 @@ mongoose.connect(
 		console.log("Connected to mongodb");
 	}
 );
+//tes
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static('client/build'));
